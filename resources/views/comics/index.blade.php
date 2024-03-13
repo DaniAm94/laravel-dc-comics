@@ -18,9 +18,7 @@
                     </div>
                 @endforeach
             </div>
-            @if ($comics->hasPages())
-                {{ $comics->links() }}
-            @endif
+            {{ $comics->links() }}
             <button role="button" id="load-btn">Load More</button>
         </div>
     </section>
