@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $title = 'home';
-    return view('home', compact('title'));
+    return view('home');
 })->name('home');
 
 Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
@@ -24,37 +23,37 @@ Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
 Route::get('/comics/{comic}', [ComicController::class, 'show'])->name('comic.show');
 
 Route::get('/characters', function () {
-    return view('characters', compact('title'));
+    return view('characters');
 })->name('characters');
 
 Route::get('/movies', function () {
-    return view('movies', compact('title'));
+    return view('movies');
 })->name('movies');
 
 Route::get('/tv', function () {
-    return view('tv', compact('title'));
+    return view('tv');
 })->name('tv');
 
 Route::get('/games', function () {
-    return view('games', compact('title'));
+    return view('games');
 })->name('games');
 
 Route::get('/collectibles', function () {
-    return view('collectibles', compact('title'));
+    return view('collectibles');
 })->name('collectibles');
 
 Route::get('/videos', function () {
-    return view('videos', compact('title'));
+    return view('videos');
 })->name('videos');
 
 Route::get('/fans', function () {
-    return view('fans', compact('title'));
+    return view('fans');
 })->name('fans');
 
 Route::get('/news', function () {
-    return view('news', compact('title'));
+    return view('news');
 })->name('news');
 
 Route::get('/shop', function () {
-    return view('shop', compact('title'));
+    return view('shop');
 })->name('shop');
