@@ -11,7 +11,7 @@
     <section id="show">
         <header class="section-header">
             <div class="container">
-                <div class="prod-card">
+                <div class="prod-card-sm">
                     <div class="top-label">Comic book</div>
                     <figure>
                         <img src="{{ $comic->thumb }}" :alt="comic cover">

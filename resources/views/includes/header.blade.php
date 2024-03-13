@@ -17,7 +17,7 @@
         <form action="{{ route('comics.index') }}" method="GET">
             <div class="input-group">
                 <input type="search" class="form-control" placeholder="Search" name="search"
-                    value="{{ $search }}">
+                    value="{{ $search ?? '' }}">
                 <button class="btn"><i class="fa-brands fa-searchengin"></i></button>
             </div>
         </form>

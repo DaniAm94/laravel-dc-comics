@@ -1,5 +1,6 @@
-@if (Route::is('comic'))
-@else
+@unless (Route::is('comics.show'))
+
+
     <section id="navigation">
         <div class="container">
             <nav>
@@ -16,4 +17,4 @@
             </nav>
         </div>
     </section>
-@endif
+@endunless

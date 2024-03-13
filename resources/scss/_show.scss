@@ -14,7 +14,7 @@
             padding: 0;
         }
 
-        .prod-card {
+        .prod-card-sm {
             position: absolute;
             bottom: 10px;
 
@@ -30,13 +30,13 @@
 
             .top-label {
                 top: 2px;
-                left: 12px;
+                left: 2px;
             }
 
             .bottom-label {
                 bottom: 12px;
-                left: 12px;
-                right: 12px;
+                left: 2px;
+                right: 2px;
             }
 
             figure {
