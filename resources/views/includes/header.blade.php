@@ -8,8 +8,8 @@
             <ul>
                 @foreach (config('header') as $item)
                     <li>
-                        <a href="{{ route("{$item['text']}") }}"
-                            class="{{ Route::is("{$item['text']}") ? 'active' : '' }}"><?= strtoupper($item['text']) ?></a>
+                        <a href="{{ route("{$item['name']}") }}"
+                            class="{{ Route::is("{$item['name']}") ? 'active' : '' }}"><?= strtoupper($item['text']) ?></a>
                     </li>
                 @endforeach
             </ul>

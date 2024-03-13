@@ -14,7 +14,7 @@
                 <div class="prod-card">
                     <div class="top-label">Comic book</div>
                     <figure>
-                        <img src="{{ $comic['thumb'] }}" :alt="comic cover">
+                        <img src="{{ $comic->thumb }}" :alt="comic cover">
                     </figure>
                     <div class="bottom-label">view gallery</div>
                 </div>
@@ -26,12 +26,12 @@
                     <h2><?= $comic['title'] ?></h2>
                     <div class="green-bar">
                         <div class="green-info">
-                            <span><strong>U.S. Price: </strong><?= $comic['price'] ?></span>
+                            <span><strong>U.S. Price: </strong><?= $comic->price ?></span>
                             <span><strong>AVAILABLE</strong></span>
                         </div>
                         <button role="button">Check Availability <i class="fas fa-caret-down"></i></button>
                     </div>
-                    <p><?= $comic['description'] ?></p>
+                    <p>{{ $comic->description }}</p>
                 </div>
                 <div class="small-side">
                     <h5>ADVERTISEMENT</h5>
@@ -47,34 +47,26 @@
                     <h3>Talent</h3>
                     <div class="artists">
                         <strong>Art by:</strong>
-                        <ul>
-                            @foreach ($comic['artists'] as $artist)
-                                <li><span>{{ $artist }}</span></li>
-                            @endforeach
-                        </ul>
+                        <p>{{ $comic->artists }}</p>
                     </div>
                     <div class="writers">
                         <strong>Written by:</strong>
-                        <ul>
-                            @foreach ($comic['writers'] as $writer)
-                                <li><span>{{ $writer }}</span></li>
-                            @endforeach
-                        </ul>
+                        <p>{{ $comic->writers }}</p>
                     </div>
                 </div>
                 <div class="specs">
                     <h3>Specs</h3>
                     <div>
                         <strong>Series:</strong>
-                        <span class="comic"><?= $comic['series'] ?></span>
+                        <span class="comic">{{ $comic->series }}</span>
                     </div>
                     <div>
                         <strong>U.S. Price:</strong>
-                        <span><?= $comic['price'] ?></span>
+                        <span>{{ $comic->price }}</span>
                     </div>
                     <div>
                         <strong>On Sale Date:</strong>
-                        <span><?= $comic['sale_date'] ?></span>
+                        <span>{{ $comic->sale_date }}</span>
                     </div>
 
                 </div>

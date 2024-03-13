@@ -5,13 +5,13 @@
         <div class="container">
             <h2>Current Series</h2>
             <div class="card-container">
-                @foreach (config('comics') as $comic)
+                @foreach ($comics as $comic)
                     <div class="prod-card">
-                        <a href="{{ route('comic', $loop->index) }}">
+                        <a href="{{ route('comic.show', $comic) }}">
                             <figure>
-                                <img src="{{ $comic['thumb'] }}" :alt="comic cover">
+                                <img src="{{ $comic->thumb }}" :alt="comic cover">
                             </figure>
-                            <span>{{ $comic['series'] }}</span>
+                            <span>{{ $comic->series }}</span>
                         </a>
                     </div>
                 @endforeach
