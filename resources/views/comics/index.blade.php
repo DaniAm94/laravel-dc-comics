@@ -18,6 +18,9 @@
                     </div>
                 @endforeach
             </div>
+            @if ($comics->hasPages())
+                {{ $comics->links() }}
+            @endif
             <button role="button" id="load-btn">Load More</button>
         </div>
     </section>

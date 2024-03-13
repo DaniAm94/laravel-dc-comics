@@ -10,10 +10,11 @@ class ComicController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $comics = Comic::all();
-        return view('comics.index', compact('comics'));
+        $search = $request->query('search');
+        $comics = Comic::where('series', 'LIKE', "%$search%")->paginate(3);
+        return view('comics.index', compact('comics', 'search'));
     }
 
     /**
