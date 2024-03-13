@@ -1,0 +1,55 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+
+header#main-header {
+    height: 130px;
+    background-color: white;
+
+    .container {
+        @include flex('', 'between');
+    }
+
+    figure {
+        height: 90px;
+        width: 90px;
+    }
+
+    ul {
+        display: flex;
+        column-gap: 1rem;
+    }
+
+    a {
+        color: black;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block;
+        line-height: 130px;
+        height: 130px;
+        display: flex;
+        align-items: center;
+    }
+
+    a:hover,
+    a.active {
+        color: $dc-blue;
+        position: relative;
+    }
+
+    a:not(.header-logo):hover::after,
+
+    a.active::after {
+        content: '';
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: $dc-blue;
+    }
+
+    .header-logo:hover {
+        transform: scale(1.1);
+    }
+
+}

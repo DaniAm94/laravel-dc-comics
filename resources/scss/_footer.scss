@@ -1,0 +1,81 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+
+
+/* Footer generics */
+footer {
+    .container {
+        @include flex('', 'between', )
+    }
+
+
+}
+
+/* Top Footer */
+.footer-top {
+    background-image: url("../img/footer-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .container {
+        height: 600px;
+        overflow: hidden;
+    }
+
+    .links-container {
+        display: flex;
+        flex-basis: calc(100% / 3);
+        flex-wrap: wrap;
+
+        .links-list {
+            flex-basis: calc(100% / 3);
+
+            h3 {
+                color: white;
+                text-transform: uppercase;
+                margin: 1rem 0;
+            }
+
+            a {
+                color: $dc-footer-grey;
+            }
+
+            ul {
+                @include flex('column', 'start', 'start');
+                row-gap: 0.3rem;
+            }
+        }
+    }
+
+    img {
+        width: 700px;
+        height: auto;
+    }
+
+}
+
+
+
+/* Bottom Footer */
+
+.footer-bottom {
+    background-color: $dc-dark-grey;
+    padding: 2rem 0;
+
+    ul {
+        @include flex('', 'start');
+        column-gap: 1rem;
+    }
+
+    h3 {
+        color: $dc-blue;
+        text-transform: uppercase;
+    }
+}
+
+#register-btn {
+    padding: 15px;
+    border: 2px solid $dc-blue;
+    text-transform: uppercase;
+    color: white;
+}

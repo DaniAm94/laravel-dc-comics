@@ -1,0 +1,31 @@
+@mixin flex($axis: row, $justify: center, $align: center) {
+    display: flex;
+
+    @if $axis ==column {
+        flex-direction: column;
+    }
+
+    @if $justify ==between {
+        justify-content: space-between;
+    }
+
+    @else if $justify==start {
+        justify-content: flex-start;
+    }
+
+    @else {
+        justify-content: center;
+    }
+
+    @if $align==start {
+        align-items: flex-start;
+    }
+
+    @else if $align==end {
+        align-items: flex-end;
+    }
+
+    @else {
+        align-items: center;
+    }
+}
