@@ -3,7 +3,8 @@
 @section('main-content')
     <div class="container-sm mb-4">
 
-        <form class="row g-3">
+        <form class="row g-3" action="{{ route('comics.store') }}" method="POST">
+            @csrf
             <div class="col-md-6">
                 <label for="input-title" class="form-label">Title</label>
                 <input name="title" type="text" class="form-control" id="input-title">
