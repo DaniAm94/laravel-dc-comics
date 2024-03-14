@@ -10,4 +10,9 @@ class Comic extends Model
 
     protected $fillable = ['title', 'description', 'series', 'thumb', 'price', 'sale_date', 'artists', 'writers', 'type'];
     use HasFactory;
+
+    public function setPriceCurrency()
+    {
+        $this->price = "$$this->price";
+    }
 }
