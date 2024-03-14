@@ -11,3 +11,12 @@ Iniziate a definire le prime operazioni CRUD con le relative view:
 - show()
 ### `Bonus`
 Qualunque cosa a piacere delle varie che abbiamo visto
+
+---
+# Parte 2
+# Laravel CRUD Create & Store
+    Proseguiamo con l'esercizio Comics e aggiungiamo la possibilità di aggiungere un fumetto!
+    Ci servirà una rotta per il form e un'altra per l'effettiva creazione del film nel database!
+    Aiutatevi con slide e documentazione!
+### `BONUS`
+Provare a implementare una minima validazione come visto stamattina!
