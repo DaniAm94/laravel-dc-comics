@@ -9,7 +9,7 @@
                 @foreach (config('header') as $item)
                     <li>
                         <a href="{{ route("{$item['name']}") }}"
-                            class="{{ Route::is("{$item['name']}") ? 'active' : '' }}"><?= strtoupper($item['text']) ?></a>
+                            class="@if (Request::is("{$item['text']}*")) active @endif"><?= strtoupper($item['text']) ?></a>
                     </li>
                 @endforeach
             </ul>
