@@ -19,7 +19,7 @@
                 @endforeach
             </div>
             {{ $comics->links() }}
-            <button role="button" id="load-btn">Load More</button>
+            <a href="{{ route('comics.create') }}" id="load-btn">Load More</a>
         </div>
     </section>
 @endsection
