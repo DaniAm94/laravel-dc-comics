@@ -34,8 +34,8 @@
                 </select>
             </div>
             <div class="col-md-2">
-                <label for="inputZip" class="form-label">Sale date</label>
-                <input type="date" class="form-control" id="inputZip">
+                <label for="input-date" class="form-label">Sale date</label>
+                <input type="date" name="sale_date" class="form-control" id="input-date">
             </div>
             <div class="col-md-6">
                 <label class="form-label" for="input-artists">Artists</label>
