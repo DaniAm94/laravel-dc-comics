@@ -19,7 +19,7 @@
                 @endforeach
             </div>
             {{ $comics->links() }}
-            <a href="{{ route('comics.create') }}" id="load-btn">Load More</a>
+            <a href="{{ route('comics.create') }}" class="load-btn">Load More</a>
         </div>
     </section>
 @endsection
