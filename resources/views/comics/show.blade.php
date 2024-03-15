@@ -23,7 +23,11 @@
         <div class="top-info">
             <div class="container">
                 <div class="large-side">
-                    <h2><?= $comic['title'] ?></h2>
+                    <div class="d-flex justify-content-between ">
+                        <h2><?= $comic['title'] ?></h2>
+                        <a class="btn" href="{{ route('comics.edit', $comic->id) }}"><i
+                                class="fa-solid fa-pen-to-square"></i></a>
+                    </div>
                     <div class="green-bar">
                         <div class="green-info">
                             <span><strong>U.S. Price: </strong><?= $comic->price ?></span>
