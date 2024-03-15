@@ -28,10 +28,16 @@
                 <label for="input-description" class="form-label">Description</label>
                 <textarea name="description" class="form-control" id="input-description" cols="30" rows="5">{{ old('description', '') }}</textarea>
             </div>
-            <div class="col-12">
+            <div class="col-11 d-flex flex-column justify-content-center">
                 <label for="input-thumb" class="form-label">Thumb</label>
                 <input type="url" name="thumb" class="form-control" id="input-thumb" placeholder="http..."
                     value="{{ old('thumb', '') }}">
+            </div>
+            <div class="col-1 d-flex justify-content-center align-items-center">
+                <figure class="mb-0" id="preview-container">
+                    <img src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM="
+                        alt="comic cover" class="img-fluid" id="preview">
+                </figure>
             </div>
             <div class="col-md-6">
                 <label for="input-price" class="form-label">Price</label>
@@ -64,4 +70,19 @@
             </div>
         </form>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        const placeholder =
+            'https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=';
+        const inputThumb = document.getElementById('input-thumb');
+        const preview = document.getElementById('preview');
+        inputThumb.addEventListener('input', () => {
+            const url = inputThumb.value;
+            preview.src = url || placeholder;
+
+
+        })
+    </script>
 @endsection
