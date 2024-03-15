@@ -28,6 +28,8 @@ Route::get('/comics/{comic}', [ComicController::class, 'show'])->name('comics.sh
 
 Route::get('/comics/{comic}/edit', [ComicController::class, 'edit'])->name('comics.edit');
 
+Route::put('/comics/{comic}', [ComicController::class, 'update'])->name('comics.update');
+
 Route::get('/characters', function () {
     return view('characters');
 })->name('characters');
