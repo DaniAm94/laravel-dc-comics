@@ -14,6 +14,10 @@
                                 </figure>
                                 <span>{{ $comic->series }}</span>
                             </a>
+                            <a class="btn btn-on-card tooltip-parent" href="{{ route('comics.edit', $comic->id) }}">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <span class="my-tooltip">Update</span>
+                            </a>
                         </div>
                     </div>
                 @endforeach

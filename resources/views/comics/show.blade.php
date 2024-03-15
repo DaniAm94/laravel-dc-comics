@@ -25,8 +25,10 @@
                 <div class="large-side">
                     <div class="d-flex justify-content-between ">
                         <h2><?= $comic['title'] ?></h2>
-                        <a class="btn" href="{{ route('comics.edit', $comic->id) }}"><i
-                                class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="btn tooltip-parent" href="{{ route('comics.edit', $comic->id) }}">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span class="my-tooltip">Update</span>
+                        </a>
                     </div>
                     <div class="green-bar">
                         <div class="green-info">

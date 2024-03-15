@@ -9,3 +9,45 @@ body.body-bg {
     font-family: "Roboto Condensed", sans-serif;
     background-color: $dc-black;
 }
+
+.tooltip-parent {
+    position: relative;
+
+    .my-tooltip {
+        visibility: hidden;
+        background-color: $dc-blue;
+        color: white;
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 6px;
+        position: absolute;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+
+        // Fade effect
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    // Tooltip arrow
+    .my-tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        right: 10%;
+        margin-left: -5px;
+        border-bottom: 20px;
+        border-top: 5px;
+        border-left: 7px;
+        border-right: 4px;
+        border-style: solid;
+        border-color: #4483f6 transparent transparent transparent;
+    }
+
+}
+
+.tooltip-parent:hover .my-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
