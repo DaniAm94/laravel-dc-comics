@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form class="row g-3" action="{{ route('comics.store') }}" method="POST">
+        <form class="row g-3" action="{{ route('comics.update', $comic) }}" method="POST">
             @method('PUT')
             @csrf
             <div class="col-md-6">
