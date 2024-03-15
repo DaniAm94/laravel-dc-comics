@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Validation\Rule;
+
 
 class ComicController extends Controller
 {
@@ -37,13 +39,13 @@ class ComicController extends Controller
             'thumb' => 'nullable|url',
             'price' => 'required|string',
             'sale_date' => 'required|date|before_or_equal:today',
-            'type' => 'required|in: graphic novel, comic book',
+            'type' => 'required|in:graphic novel,comic book',
             'artists' => 'required|string',
             'writers' => 'required|string'
         ]);
+        if (!str_contains($data['price'], '$')) $data['price'] = '$' . $data['price'];
         $comic = new Comic();
         $comic->fill($data);
-        $comic->setPriceCurrency();
         $comic->save();
         return to_route('comics.show', $comic->id);
     }
@@ -67,9 +69,23 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->validate([
+            'title' => ['required', 'string', Rule::unique('comics')->ignore($comic->id)],
+            'series' => 'required|string',
+            'description' => 'nullable|string',
+            'thumb' => 'nullable|url',
+            'price' => 'required|string',
+            'sale_date' => 'required|date|before_or_equal:today',
+            'type' => 'required|in:graphic novel,comic book',
+            'artists' => 'required|string',
+            'writers' => 'required|string'
+        ]);
+        if (!str_contains($data['price'], '$')) $data['price'] = '$' . $data['price'];
+        $comic->fill($data);
+        $comic->save();
+        return to_route('comics.show', $comic->id);
     }
 
     /**
