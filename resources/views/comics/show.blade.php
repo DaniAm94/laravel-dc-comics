@@ -32,11 +32,15 @@
                                 <span class="my-tooltip">Update</span>
                             </a>
                             <form action="{{ route('comics.destroy', $comic->id) }}"
-                                class=" tooltip-parent d-flex align-items-center" method="POST">
+                                class=" tooltip-parent d-flex align-items-center delete-form" method="POST"
+                                data-title="{{ $comic->title }}">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn trash-btn"><i class="fa-solid fa-trash-can"></i></button>
                                 <span class="my-tooltip">Delete</span>
+
+                                {{-- Modal --}}
+                                @include('includes.comics.modal')
                             </form>
                         </div>
                     </div>
@@ -119,4 +123,8 @@
             </div>
         </nav>
     </section>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/delete-confirmation.js')
 @endsection

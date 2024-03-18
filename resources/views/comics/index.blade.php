@@ -21,7 +21,8 @@
                                     <span class="my-tooltip">Update</span>
                                 </a>
                                 <form action="{{ route('comics.destroy', $comic->id) }}"
-                                    class=" tooltip-parent d-flex align-items-center" method="POST">
+                                    class=" tooltip-parent d-flex align-items-center delete-form" method="POST"
+                                    data-title="{{ $comic->title }}">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn trash-btn"><i class="fa-solid fa-trash-can"></i></button>
@@ -31,9 +32,17 @@
                         </div>
                     </div>
                 @endforeach
+                {{-- Modal --}}
+                @include('includes.comics.modal')
             </div>
+            {{-- Pagination --}}
             {{ $comics->links() }}
+            {{-- Add comic button --}}
             <a href="{{ route('comics.create') }}" class="load-btn">Load More</a>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/delete-confirmation.js')
 @endsection
