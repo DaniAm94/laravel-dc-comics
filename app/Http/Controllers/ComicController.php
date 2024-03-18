@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 use Illuminate\Http\Request;
 use App\Models\Comic;
-use Illuminate\Validation\Rule;
 
 
 class ComicController extends Controller
@@ -30,19 +31,9 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        $data = $request->validate([
-            'title' => 'required|string|unique:comics',
-            'series' => 'required|string',
-            'description' => 'nullable|string',
-            'thumb' => 'nullable|url',
-            'price' => 'required|string',
-            'sale_date' => 'required|date|before_or_equal:today',
-            'type' => 'required|in:graphic novel,comic book',
-            'artists' => 'required|string',
-            'writers' => 'required|string'
-        ]);
+        $data = $request->validated();
         if (!str_contains($data['price'], '$')) $data['price'] = '$' . $data['price'];
         $comic = new Comic();
         $comic->fill($data);
@@ -69,19 +60,9 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data = $request->validate([
-            'title' => ['required', 'string', Rule::unique('comics')->ignore($comic->id)],
-            'series' => 'required|string',
-            'description' => 'nullable|string',
-            'thumb' => 'nullable|url',
-            'price' => 'required|string',
-            'sale_date' => 'required|date|before_or_equal:today',
-            'type' => 'required|in:graphic novel,comic book',
-            'artists' => 'required|string',
-            'writers' => 'required|string'
-        ]);
+        $data = $request->validated();
         if (!str_contains($data['price'], '$')) $data['price'] = '$' . $data['price'];
         $comic->fill($data);
         $comic->save();
