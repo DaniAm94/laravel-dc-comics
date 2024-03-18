@@ -11,7 +11,8 @@ export default defineConfig({
             input: [
                 'resources/scss/app.scss',
                 'resources/js/app.js',
-                'resources/js/preview.js'
+                'resources/js/preview.js',
+                'resources/js/delete-confirmation.js'
             ],
             refresh: true,
         }),
